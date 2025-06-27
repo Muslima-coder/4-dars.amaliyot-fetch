@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axion</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <style type="text/tailwindcss"> </style>
+</head>
+<body>
+    <header class="bg-purple-900 mt-0 h-[100px] fixed z-[9999] w-full p-8 shadow-md ">
+        <div class="containers flex items-center justify-between">
+            <h1 class="text-white font-bold text-[25px]">Products</h1>
+            <div class="space-x-[15px]">
+            <input class="search-input bg-white rounded-[20px] outline-none pl-5 p-2 w-[250px]" name="Search" type="text" placeholder="Search...">
+            <button onclick="handleCreate()" class="cursor-pointer bg-blue-800 text-white w-[100px] p-2 rounded-[35px]">Create</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="p-5">
+            <div class="containers">
+                <ul class="mt-[200px] product-list flex flex-wrap gap-[30px] justify-center"></ul>
+            </div>
+        </section>
+    </main>
+    
+
+     <div id="wrapper" class="modal-wrapper scale-0 duration-300 flex items-center justify-center fixed top-0 bottom-0 left-0 right-0 bg-[#00000097] backdrop-blur-[5px]">
+        <div class="modal-inner p-[20px] bg-white rounded-md"> 
+        </div>
+    </div>
+
+     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
