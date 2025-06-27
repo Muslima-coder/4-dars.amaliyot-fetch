@@ -68,7 +68,7 @@ function handleCreate() {
             title: e.target.title.value,
             price: e.target.price.value,
             description: e.target.description.value,
-            categoryId: 1,
+            categoryId: 32,
             images: [e.target.img.value] 
         
         }
@@ -121,19 +121,10 @@ function handleEdit(id) {
 }
 
 //Search
-elSearchInput.addEventListener("input", (e) => {
-  let searchValue = e.target.value.trim();
-
-  if (searchValue === "") {
-    renderProducts( elProductList);
-    return;
-  }
-
-  let filtered = allProducts.filter(item =>
-    item.price.toString().includes(searchValue)
-  );
-
-  renderProducts(filtered, elProductList);
-});
-
-
+function SearchAndSelect (value, currentValue){
+ if(value == "price"){
+   let filteredArr = renderProducts().filter(item => item[`${value}`].includes(currentValue))
+   renderProducts(filteredArr, elProductList)
+ }
+}
+elSearchInput.addEventListener("input", (evt) => SearchAndSelect("price", evt.target.value))
